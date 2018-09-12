@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Diagnostico</string>
+    <string name="Diagnostico">Diagnostico</string>
+    <string name="Historial">Numero de Historial</string>
+    <string name="IngresoHistorial">Ingrese el Numero de Historial</string>
+    <string name="Gravedad">Gravedad del Paciente</string>
+    <string name="Verde">Verde</string>
+    <string name="Amarillo">Amarillo</string>
+    <string name="Rojo">Rojo</string>
+    <string name="Imagen">Agregar Imagen</string>
+    <string name="Nombre">Nombre</string>
+    <string name="IngreseNombre">Ingrese el Nombre del Paciente</string>
+    <string name="Edad">Edad</string>
+    <string name="IngreseEdad">Ingrese la Edad del Paciente</string>
+    <string name="Alergia">Alergia</string>
+    <string name="IngreseAlergia">El Paciente Tiene Alguna Alergia</string>
+    <string name="Patologia">Patologia</string>
+    <string name="IngresePato">Patologia del Paciente</string>
+
+    <string name="Herida">Herida</string>
+    <string name="IngreseHerida">El Paciente Tiene Alguna Herida</string>
+
+    <string name="Localizacion">Localizacion</string>
+    <string name="IngreseLocalizacion">Localizacion de la Herida</string>
+
+
+    <string name="Motivo">Motivo</string>
+    <string name="IngreseMotivo">Motivo</string>
+
+    <string name="Agregar">Agregar</string>
+    <string name="NewDi">Nuevo Diagnostico</string>
+
+
+</resources>
