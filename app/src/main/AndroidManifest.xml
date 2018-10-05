@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.games.user.diagnostico">
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -22,9 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Diagnostic" />
-        <activity android:name=".MenuDiagnostic" />
-        <activity android:name=".EditDiagnostic"></activity>
+        <activity
+            android:name=".Diagnostic"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MenuDiagnostic"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".EditDiagnostic"
+            android:windowSoftInputMode="stateHidden" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -36,7 +43,6 @@
                 android:resource="@xml/provider_paths" />
 
         </provider>
-
 
 
     </application>

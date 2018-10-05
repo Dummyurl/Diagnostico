@@ -46,7 +46,7 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
     public static String CARPETA_RAIZ = "MisImagenesDiagnostico/";
     public static String RUTA_IMAGEN = CARPETA_RAIZ + "Diagnosticos";
     Button add_el, botonCargar, fechabtn;
-    EditText historial, nombre,edad,alergia,patologia,herida, localizacion, motivo;
+    EditText historial, nombre, edad, alergia, patologia, herida, localizacion, motivo;
     RadioButton verde, amarillo, rojo;
     TextView textfecha;
     ImageView imagen;
@@ -55,13 +55,9 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
     private int diaint, mesint, ano;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diagnostic);
         add_el = findViewById(R.id.add_element);
@@ -317,9 +313,9 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
                         }
                         ContactDiagnostic c = new ContactDiagnostic(getBaseContext());
                         c.open();
-                        c.createDiagnostic(fecha,historial.getText().toString() ,radiobutn, nombre.getText().toString(), edad.getText().toString(),
-                                alergia.getText().toString(),patologia.getText().toString(),herida.getText().toString(),localizacion.getText().toString(),
-                                motivo.getText().toString());
+                        c.createDiagnostic(fecha, historial.getText().toString(), radiobutn, nombre.getText().toString(), edad.getText().toString(),
+                                alergia.getText().toString(), patologia.getText().toString(), herida.getText().toString(), localizacion.getText().toString(),
+                                motivo.getText().toString(), imagenid);
 
                         Toast.makeText(getBaseContext(), "Elemento Agregado!!", Toast.LENGTH_LONG).show();
                         Intent intentds = new Intent(Diagnostic.this, MenuDiagnostic.class);

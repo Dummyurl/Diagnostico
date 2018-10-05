@@ -61,14 +61,14 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         ArrayList<Category> category = new ArrayList<Category>();
         for (int i = 0; i < values.size(); i++) {
 
-            String Fecha = values.get(i).fechadiagnostic.charAt(0) + "" + values.get(i).fechadiagnostic.charAt(1) + "/" + values.get(i).fechadiagnostic.charAt(2) + "" + values.get(i).fechadiagnostic.charAt(3) + "/" +
-                    values.get(i).fechadiagnostic.charAt(4) + "" + values.get(i).fechadiagnostic.charAt(5) + values.get(i).fechadiagnostic.charAt(6) + values.get(i).fechadiagnostic.charAt(7);
+            String Fecha = values.get(i).fecha.charAt(0) + "" + values.get(i).fecha.charAt(1) + "/" + values.get(i).fecha.charAt(2) + "" + values.get(i).fecha.charAt(3) + "/" +
+                    values.get(i).fecha.charAt(4) + "" + values.get(i).fecha.charAt(5) + values.get(i).fecha.charAt(6) + values.get(i).fecha.charAt(7);
 
             String paths = Environment.getExternalStorageDirectory() +
-                    File.separator + Diagnostic.RUTA_IMAGEN + File.separator + 0 + values.get(i).fechadiagnostic + values.get(i).idimagen + ".jpg";
+                    File.separator + Diagnostic.RUTA_IMAGEN + File.separator + 0 + values.get(i).fecha+ values.get(i).imagen + ".jpg";
 
             Bitmap bitmap = BitmapFactory.decodeFile(paths);
-            category.add(new Category("olo" + values.get(i).iddiagnostic, "Servicio 1", Fecha + '\n' + values.get(i).rbtndiagnostic, getResizedBitmap(bitmap, this)));
+            category.add(new Category("olo" + values.get(i).iddiagnostic, "Servicio 1", Fecha + '\n' + values.get(i).rbtn, getResizedBitmap(bitmap, this)));
         }
         ListView listView = findViewById(android.R.id.list);
         AdapterCategory adapter = new AdapterCategory(this, category);
@@ -82,17 +82,17 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
 
                 Intent i = new Intent(MenuDiagnostic.this, EditDiagnostic.class);
                 i.putExtra("diagnosticid", values.get(position).iddiagnostic);
-                i.putExtra("diagnosticfecha", values.get(position).fechadiagnostic);
-                i.putExtra("diagnostichistoria", values.get(position).historiadiagnostic);
-                i.putExtra("diagnosticrbtn", values.get(position).rbtndiagnostic);
-                i.putExtra("diagnosticnombre", values.get(position).nombrediagnostic);
-                i.putExtra("diagnosticedad", values.get(position).edaddiagnostic);
-                i.putExtra("diagnosticalergia", values.get(position).alergiadiagnostic);
-                i.putExtra("diagnosticpatologia", values.get(position).patologiadiagnostic);
-                i.putExtra("diagnosticherida", values.get(position).heridadiagnostic);
-                i.putExtra("diagnosticlocalizacion", values.get(position).localizaciondiagnostic);
-                i.putExtra("diagnosticmotivo", values.get(position).motivodiagnostic);
-                i.putExtra("idimagen", values.get(position).idimagen);
+                i.putExtra("diagnosticfecha", values.get(position).fecha);
+                i.putExtra("diagnostichistoria", values.get(position).historia);
+                i.putExtra("diagnosticrbtn", values.get(position).rbtn);
+                i.putExtra("diagnosticnombre", values.get(position).nombre);
+                i.putExtra("diagnosticedad", values.get(position).edad);
+                i.putExtra("diagnosticalergia", values.get(position).alergia);
+                i.putExtra("diagnosticpatologia", values.get(position).patologia);
+                i.putExtra("diagnosticherida", values.get(position).herida);
+                i.putExtra("diagnosticlocalizacion", values.get(position).localizacion);
+                i.putExtra("diagnosticmotivo", values.get(position).motivo);
+                i.putExtra("idimagen", values.get(position).imagen);
                 startActivity(i);
                 fileList();
 
