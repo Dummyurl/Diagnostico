@@ -135,7 +135,7 @@ public class EditDiagnostic extends AppCompatActivity implements View.OnClickLis
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+       @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             startActivity(new Intent(getBaseContext(), MenuDiagnostic.class)
@@ -222,6 +222,7 @@ public class EditDiagnostic extends AppCompatActivity implements View.OnClickLis
                         Toast.makeText(getBaseContext(), "Elemento eliminado !!", Toast.LENGTH_LONG).show();
                         Intent intentds = new Intent(EditDiagnostic.this, MenuDiagnostic.class);
                         startActivity(intentds);
+
                         finish();
 
                     }
@@ -260,7 +261,9 @@ public class EditDiagnostic extends AppCompatActivity implements View.OnClickLis
                             alergia.getText().toString(), patologia.getText().toString(), herida.getText().toString(), localizacion.getText().toString(),
                             motivo.getText().toString(),imagenid);
 
+                    historial.setText("");
                     nombre.setText("");
+
                     edad.setText("");
                     alergia.setText("");
                     patologia.setText("");

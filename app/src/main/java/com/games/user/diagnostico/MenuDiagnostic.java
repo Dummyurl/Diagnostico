@@ -3,7 +3,6 @@ package com.games.user.diagnostico;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -17,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,8 +29,6 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
     ContactDiagnostic data;
     TextView txtvw;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,33 +41,6 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
 
         n.setOnClickListener(this);
 
-        SharedPreferences sharedPref;
-        sharedPref = getSharedPreferences("inicio", Context.MODE_PRIVATE);
-        if (!sharedPref.getBoolean("inicio", false)) {
-            final android.support.v7.app.AlertDialog.Builder constructor = new android.support.v7.app.AlertDialog.Builder(this);
-            View vista = getLayoutInflater().inflate(R.layout.alert_dialog_inicio, null);
-            constructor.setView(vista);
-            final android.support.v7.app.AlertDialog dialogo = constructor.create();
-            Button botonok = vista.findViewById(R.id.botonok);
-            final CheckBox chbx = vista.findViewById(R.id.chbxdialog);
-            TextView texto = vista.findViewById(R.id.txt);
-            texto.setText("Recuerda que los datos que ingreses y los docuementos archivados solo son organizados en las carpetas" +
-                    " del dispositivo, no almacenamos datos en servidores externos, ante todo nos preocupa la seguridad de tu informacion");
-            botonok.setOnClickListener(new View.OnClickListener() {
-                                           @Override
-                                           public void onClick(View v) {
-                                               SharedPreferences sharedPref;
-                                               sharedPref = getSharedPreferences(
-                                                       "inicio", Context.MODE_PRIVATE);
-                                               SharedPreferences.Editor editor = sharedPref.edit();
-                                               editor.putBoolean("inicio", chbx.isChecked());
-                                               editor.commit();
-                                               dialogo.cancel();
-                                           }
-                                       }
-            );
-            dialogo.show();
-        }
 
         final List<ContactDiagnostic> values = data.getAll();
 
@@ -130,9 +99,6 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
 
     }
 
-
-
-
     @Override
     public void onResume() {  // After a pause OR at startup
         super.onResume();
@@ -170,27 +136,16 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            Intent intentds = new Intent(MenuDiagnostic.this, MenuDiagnostic.class);
-            startActivity(intentds);
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onClick(View v) {
         Intent i = new Intent(MenuDiagnostic.this, Diagnostic.class);
         startActivity(i);
-        finish();
     }
-
 
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             LayoutInflater inflater = getLayoutInflater();
             View vi = inflater.inflate(R.layout.dialogoconfirm, null);
@@ -198,6 +153,7 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
             final AlertDialog dialog = builder.create();
             //decidir despues si sera cancelable o no
             dialog.setCancelable(false);
+
             Button botonsi = vi.findViewById(R.id.botonsi);
             botonsi.setOnClickListener(
                     new View.OnClickListener() {
@@ -206,6 +162,8 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
                             dialog.cancel();
                             MenuDiagnostic.super.onDestroy();
                             System.exit(0);
+
+
                         }
                     }
             );
@@ -225,4 +183,10 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
+
 }
+
+
+

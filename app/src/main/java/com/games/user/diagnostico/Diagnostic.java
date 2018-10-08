@@ -334,10 +334,7 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
 
                 } else {
                     Toast.makeText(getBaseContext(), " Agrega la fecha", Toast.LENGTH_LONG).show();
-
-
                 }
-
 
 
                 break;
