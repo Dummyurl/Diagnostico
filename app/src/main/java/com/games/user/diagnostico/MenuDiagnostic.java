@@ -29,10 +29,6 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_diagnostic);
@@ -65,7 +61,7 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
                     values.get(i).fecha.charAt(4) + "" + values.get(i).fecha.charAt(5) + values.get(i).fecha.charAt(6) + values.get(i).fecha.charAt(7);
 
             String paths = Environment.getExternalStorageDirectory() +
-                    File.separator + Diagnostic.RUTA_IMAGEN + File.separator + 0 + values.get(i).fecha+ values.get(i).imagen + ".jpg";
+                    File.separator + Diagnostic.RUTA_IMAGEN + File.separator + 0 + values.get(i).fecha+ values.get(i).idimagen + ".jpg";
 
             Bitmap bitmap = BitmapFactory.decodeFile(paths);
             category.add(new Category("olo" + values.get(i).iddiagnostic, "Servicio 1", Fecha + '\n' + values.get(i).rbtn, getResizedBitmap(bitmap, this)));
@@ -92,7 +88,7 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
                 i.putExtra("diagnosticherida", values.get(position).herida);
                 i.putExtra("diagnosticlocalizacion", values.get(position).localizacion);
                 i.putExtra("diagnosticmotivo", values.get(position).motivo);
-                i.putExtra("idimagen", values.get(position).imagen);
+                i.putExtra("idimagen", values.get(position).idimagen);
                 startActivity(i);
                 fileList();
 
@@ -113,16 +109,6 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         //setListAdapter(adapter);
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            startActivity(new Intent(getBaseContext(), MenuDiagnostic.class)
-                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
-            finish();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
 
 
     public static Bitmap getResizedBitmap(Bitmap bm, Context context) {
@@ -165,4 +151,18 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         startActivity(i);
         finish();
     }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            startActivity(new Intent(getBaseContext(), MenuDiagnostic.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+            finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
 }

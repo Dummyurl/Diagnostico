@@ -46,17 +46,28 @@
                 android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
-
                 <TextView
-                    android:id="@+id/textfecha"
+                    android:id="@+id/textView45"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="FECHA"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txvEfecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:text="Dia:    /  /  "
-                    android:textAppearance="?android:attr/textAppearanceLarge"
 
+                    android:text="  /  /  "
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#ffffff" />
+
             </LinearLayout>
 
             <TextView
@@ -303,19 +314,25 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/tomarimagen"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginRight="50dp"
-                    android:background="@drawable/camra"
-
-                    android:onClick="onclick" />
+                    android:id="@+id/upd_element"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/botonupd" />
 
                 <Button
-                    android:id="@+id/add_element"
+                    android:id="@+id/del_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="15dp"
+
+                    android:background="@drawable/botondel" />
+                <Button
+                    android:id="@+id/botonwats"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="@drawable/guardar" />
+                    android:background="@drawable/botonwhats" />
+
             </LinearLayout>
 
 

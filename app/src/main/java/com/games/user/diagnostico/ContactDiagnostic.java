@@ -25,7 +25,7 @@ public class ContactDiagnostic {
     public String herida;
     public String localizacion;
     public String motivo;
-    public String imagen;
+    public String idimagen;
 
     public long getId() {
         return iddiagnostic;
@@ -93,7 +93,7 @@ public class ContactDiagnostic {
     }
 
     public void updateDiagnostic(long iddiagnostic, String fechadiagnostic, String historiadiagnostic, String rbtndiagnostic, String nombrediagnostic, String edaddiagnostic,
-                                 String alergiadiagnostic, String patologiadiagnostic, String heridadiagnostic, String localizaciondiagnostic, String motivodiagnostic) {
+                                 String alergiadiagnostic, String patologiadiagnostic, String heridadiagnostic, String localizaciondiagnostic, String motivodiagnostic, String imagenid) {
         ContentValues values = new ContentValues();
         values.put(Database.DIAGNOSTIC_FECHAS, fechadiagnostic);
         values.put(Database.DIAGNOSTIC_HISTORIA, historiadiagnostic);
@@ -105,6 +105,8 @@ public class ContactDiagnostic {
         values.put(Database.DIAGNOSTIC_HERIDA, heridadiagnostic);
         values.put(Database.DIAGNOSTIC_LOCALIZACION, localizaciondiagnostic);
         values.put(Database.DIAGNOSTIC_MOTIVOS, motivodiagnostic);
+        values.put(Database.DIAGNOSTIC_IDIMAGEN, imagenid);
+
         String where = "licenciaid=?";
         String[] whereargs = new String[]{String.valueOf(iddiagnostic)};
         long insertId = database.update(Database.TABLE_DIAGNOSTIC,
@@ -153,7 +155,7 @@ public class ContactDiagnostic {
         c.herida = cursor.getString(8);
         c.localizacion = cursor.getString(9);
         c.motivo = cursor.getString(10);
-        c.imagen = cursor.getString(11);
+        c.idimagen = cursor.getString(11);
         return c;
     }
 

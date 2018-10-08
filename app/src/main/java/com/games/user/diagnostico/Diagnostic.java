@@ -88,6 +88,11 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
         mesint = c.get(Calendar.MONTH);
         ano = c.get(Calendar.YEAR);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
 
         if (validaPermisos()) {
             botonCargar.setEnabled(true);
@@ -370,18 +375,6 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            startActivity(new Intent(getBaseContext(), MenuDiagnostic.class)
-                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
-            finish();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             Intent intentds = new Intent(Diagnostic.this, MenuDiagnostic.class);
@@ -390,6 +383,7 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 
 }
