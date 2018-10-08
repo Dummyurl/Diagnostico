@@ -3,6 +3,7 @@ package com.games.user.diagnostico;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,8 +40,34 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         txtvw = findViewById(R.id.textviewadd);
         data = new ContactDiagnostic(this);
         data.open();
-
+        SharedPreferences sharedPref;
+        sharedPref = getSharedPreferences("inicio", Context.MODE_PRIVATE);
         n.setOnClickListener(this);
+        if (!sharedPref.getBoolean("inicio", false)) {
+            final android.support.v7.app.AlertDialog.Builder constructor = new android.support.v7.app.AlertDialog.Builder(this);
+            View vista = getLayoutInflater().inflate(R.layout.alert_dialog_inicio, null);
+            constructor.setView(vista);
+            final android.support.v7.app.AlertDialog dialogo = constructor.create();
+            Button botonok = vista.findViewById(R.id.botonok);
+            final CheckBox chbx = vista.findViewById(R.id.chbxdialog);
+            TextView texto = vista.findViewById(R.id.txt);
+            texto.setText("Recuerda que los datos que ingreses y los docuementos archivados solo son organizados en las carpetas" +
+                    " del dispositivo, no almacenamos datos en servidores externos, ante todo nos preocupa la seguridad de tu informacion");
+            botonok.setOnClickListener(new View.OnClickListener() {
+                                           @Override
+                                           public void onClick(View v) {
+                                               SharedPreferences sharedPref;
+                                               sharedPref = getSharedPreferences(
+                                                       "inicio", Context.MODE_PRIVATE);
+                                               SharedPreferences.Editor editor = sharedPref.edit();
+                                               editor.putBoolean("inicio", chbx.isChecked());
+                                               editor.commit();
+                                               dialogo.cancel();
+                                           }
+                                       }
+            );
+            dialogo.show();
+        }
 
 
         final List<ContactDiagnostic> values = data.getAll();
@@ -183,6 +211,8 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 
 
 
