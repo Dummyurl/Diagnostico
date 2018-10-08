@@ -59,12 +59,10 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
 
             String Fecha = values.get(i).fecha.charAt(0) + "" + values.get(i).fecha.charAt(1) + "/" + values.get(i).fecha.charAt(2) + "" + values.get(i).fecha.charAt(3) + "/" +
                     values.get(i).fecha.charAt(4) + "" + values.get(i).fecha.charAt(5) + values.get(i).fecha.charAt(6) + values.get(i).fecha.charAt(7);
-
             String paths = Environment.getExternalStorageDirectory() +
                     File.separator + Diagnostic.RUTA_IMAGEN + File.separator + 0 + values.get(i).fecha+ values.get(i).idimagen + ".jpg";
-
             Bitmap bitmap = BitmapFactory.decodeFile(paths);
-            category.add(new Category("olo" + values.get(i).iddiagnostic, "Servicio 1", Fecha + '\n' + values.get(i).rbtn, getResizedBitmap(bitmap, this)));
+            category.add(new Category("olo" + values.get(i).iddiagnostic, "Servicio 1", Fecha + '\n'+ values.get(i).nombre + '\n'+ values.get(i).rbtn+ '\n'+ values.get(i).historia, getResizedBitmap(bitmap , this)));
         }
         ListView listView = findViewById(android.R.id.list);
         AdapterCategory adapter = new AdapterCategory(this, category);

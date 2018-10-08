@@ -84,7 +84,7 @@
                 android:hint="@string/IngresoHistorial"
                 android:inputType="number"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
 
@@ -159,7 +159,7 @@
                 android:hint="@string/IngreseNombre"
                 android:inputType="text"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
 
@@ -181,7 +181,7 @@
                 android:hint="@string/IngreseEdad"
                 android:inputType="number"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
             <TextView
@@ -202,7 +202,7 @@
                 android:hint="@string/IngreseAlergia"
                 android:inputType="text"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
             <TextView
@@ -223,7 +223,7 @@
                 android:hint="@string/IngresePato"
                 android:inputType="text"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
             <TextView
                 android:id="@+id/textView5"
@@ -243,7 +243,7 @@
                 android:hint="@string/IngreseHerida"
                 android:inputType="text"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
             <TextView
@@ -264,7 +264,7 @@
                 android:hint="@string/IngreseLocalizacion"
                 android:inputType="text"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
             <TextView
@@ -285,7 +285,7 @@
                 android:hint="@string/IngreseMotivo"
                 android:inputType="text"
                 android:textColor="#ffffff"
-                android:textColorHint="#a2595858"
+                android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
 

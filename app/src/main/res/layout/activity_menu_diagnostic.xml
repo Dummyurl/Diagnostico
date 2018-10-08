@@ -16,7 +16,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/NewDi"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#636060"
+        android:textColor="#303F9F"
         android:textStyle="bold" />
 
     <Button
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:listSelector="#219711"
+        android:listSelector="#5eb1d2"
         android:theme="@style/listViewStyle" />
 
 
