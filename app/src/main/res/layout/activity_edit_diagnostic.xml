@@ -91,7 +91,6 @@
                 android:textColorHint="#303F9F"
                 android:windowSoftInputMode="adjustPan" />
 
-
             <TextView
                 android:id="@+id/gravedadd"
                 android:layout_width="wrap_content"
@@ -100,7 +99,6 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -117,10 +115,8 @@
                         android:id="@+id/verde"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:buttonTint="#ffffff"
+                        android:buttonTint="#36d931"
                         android:text="@string/Verde"
-
-
                         android:textColor="#ffffff" />
 
                     <RadioButton
@@ -128,10 +124,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:buttonTint="#ffffff"
+                        android:buttonTint="#ecdf23"
                         android:text="@string/Amarillo"
-
-
                         android:textColor="#ffffff" />
 
                     <RadioButton
@@ -139,7 +133,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:buttonTint="#ffffff"
+                        android:buttonTint="#921818"
                         android:text="@string/Rojo"
                         android:textColor="#ffffff" />
                 </RadioGroup>
@@ -310,7 +304,6 @@
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
-
                 android:orientation="horizontal">
 
                 <Button
@@ -325,21 +318,17 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_marginRight="15dp"
-
                     android:background="@drawable/botondel" />
+
                 <Button
                     android:id="@+id/botonwats"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/botonwhats" />
-
             </LinearLayout>
-
 
         </LinearLayout>
 
-
     </ScrollView>
-
 
 </LinearLayout>

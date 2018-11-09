@@ -107,7 +107,7 @@ public class ContactDiagnostic {
         values.put(Database.DIAGNOSTIC_MOTIVOS, motivodiagnostic);
         values.put(Database.DIAGNOSTIC_IDIMAGEN, imagenid);
 
-        String where = "licenciaid=?";
+        String where = "diagnosticid=?";
         String[] whereargs = new String[]{String.valueOf(iddiagnostic)};
         long insertId = database.update(Database.TABLE_DIAGNOSTIC,
                 values, where, whereargs);

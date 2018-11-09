@@ -30,6 +30,7 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
     Button n;
     ContactDiagnostic data;
     TextView txtvw;
+    String gravedades[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,17 +86,19 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         }
         // Toast.makeText(this, ""+ values.size(), Toast.LENGTH_SHORT).show();
         ArrayList<Category> category = new ArrayList<Category>();
+        gravedades = new String[values.size()];
         for (int i = 0; i < values.size(); i++) {
 
             String Fecha = values.get(i).fecha.charAt(0) + "" + values.get(i).fecha.charAt(1) + "/" + values.get(i).fecha.charAt(2) + "" + values.get(i).fecha.charAt(3) + "/" +
                     values.get(i).fecha.charAt(4) + "" + values.get(i).fecha.charAt(5) + values.get(i).fecha.charAt(6) + values.get(i).fecha.charAt(7);
             String paths = Environment.getExternalStorageDirectory() +
-                    File.separator + Diagnostic.RUTA_IMAGEN + File.separator + 0 + values.get(i).fecha+ values.get(i).idimagen + ".jpg";
+                    File.separator + Diagnostic.RUTA_IMAGEN + File.separator + 0 + values.get(i).fecha + values.get(i).idimagen + ".jpg";
             Bitmap bitmap = BitmapFactory.decodeFile(paths);
-            category.add(new Category("olo" + values.get(i).iddiagnostic, "Servicio 1", Fecha + '\n'+ values.get(i).nombre + '\n'+ values.get(i).rbtn+ '\n'+ values.get(i).historia, getResizedBitmap(bitmap , this)));
+            category.add(new Category("olo" + values.get(i).iddiagnostic, "Servicio 1", Fecha + '\n' + values.get(i).nombre +  '\n' + values.get(i).historia, getResizedBitmap(bitmap, this)));
+            gravedades[i] = values.get(i).rbtn;
         }
         ListView listView = findViewById(android.R.id.list);
-        AdapterCategory adapter = new AdapterCategory(this, category);
+        AdapterCategory adapter = new AdapterCategory(this, category,gravedades);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -136,7 +139,6 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         // ArrayAdapter<Contact> adapter = new ArrayAdapter<Contact>(this, android.R.layout.simple_expandable_list_item_1, values);
         //setListAdapter(adapter);
     }
-
 
 
     public static Bitmap getResizedBitmap(Bitmap bm, Context context) {
@@ -211,9 +213,6 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
         }
         return super.onKeyDown(keyCode, event);
     }
-
-
-
 
 
 }
