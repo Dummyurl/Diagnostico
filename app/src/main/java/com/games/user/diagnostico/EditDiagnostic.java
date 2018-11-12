@@ -202,7 +202,22 @@ public class EditDiagnostic extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
 
             case R.id.botonwats:
-                onClickWhatsApp(this, imagen, "Datos del Pciente" +"\n"+ textfecha.getText().toString() +"\n"+ " antemano muchas gracias, Saludos");
+                onClickWhatsApp(this, imagen, "Datos del Paciente:" +"\n"+"Fecha: "+ textfecha.getText().toString() +"\n"+
+                        "Numero de historial: "+ historial.getText().toString()+"\n"+
+                        "Gravedad del Paciente: "+ radiobutn+ "\n"+
+                        "Nombre: "+nombre.getText().toString()+"\n"
+                        +"Edad: "+ edad.getText().toString()+ "\n"+
+                        "Alergia: "+ alergia.getText().toString()+ "\n"+
+                        "Patologia: "+ patologia.getText().toString()+ "\n"+
+                        "Herida: "+ herida.getText().toString()+ "\n"+
+                        "Localizacion: "+ localizacion.getText().toString()+ "\n"+
+                        "Motivo: "+ motivo.getText().toString()+ "\n"
+
+
+                );
+
+
+
                 break;
 
 
