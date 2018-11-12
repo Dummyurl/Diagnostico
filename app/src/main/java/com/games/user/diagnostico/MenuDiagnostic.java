@@ -159,7 +159,7 @@ public class MenuDiagnostic extends AppCompatActivity implements View.OnClickLis
                     bm, 0, 0, width, height, matrix, false);
             bm.recycle();
         } else {
-            resizedBitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
+            resizedBitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.logodiagnostic);
         }
         return resizedBitmap;
     }

@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@+id/textView4"
-    android:background="@color/gris"
+    android:background="@color/colorPrimary"
     android:gravity="start"
     android:orientation="horizontal"
     android:padding="10dp">

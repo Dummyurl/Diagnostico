@@ -197,10 +197,12 @@ public class EditDiagnostic extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
 
+
+
         switch (v.getId()) {
 
             case R.id.botonwats:
-                onClickWhatsApp(this, imagen, "Hola Compañer@, solo para recordarte que aun no me haces el pago de la Sustitucion del día " + textfecha.getText().toString() + " antemano muchas gracias, Saludos");
+                onClickWhatsApp(this, imagen, "Datos del Pciente" +"\n"+ textfecha.getText().toString() +"\n"+ " antemano muchas gracias, Saludos");
                 break;
 
 
