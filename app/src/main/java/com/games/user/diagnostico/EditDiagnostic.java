@@ -38,7 +38,7 @@ public class EditDiagnostic extends AppCompatActivity implements View.OnClickLis
     final int COD_SELECCIONA = 10;
     final int COD_FOTO = 0;
     public static String CARPETA_RAIZ = "MisImagenesDiagnostico/";
-    public static String RUTA_IMAGEN = CARPETA_RAIZ + "Diagnosticos";
+    public static String RUTA_IMAGEN = CARPETA_RAIZ + "DX";
 
     Button upd_el, del_btn, whats;
     EditText historial, nombre, edad, alergia, patologia, herida, localizacion, motivo;

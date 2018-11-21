@@ -44,14 +44,14 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
     final int COD_FOTO = 0;
     final Calendar c = Calendar.getInstance();
     public static String CARPETA_RAIZ = "MisImagenesDiagnostico/";
-    public static String RUTA_IMAGEN = CARPETA_RAIZ + "Diagnosticos";
+    public static String RUTA_IMAGEN = CARPETA_RAIZ + "DX";
     Button add_el, botonCargar, fechabtn;
     EditText historial, nombre, edad, alergia, patologia, herida, localizacion, motivo;
     RadioButton verde, amarillo, rojo;
     TextView textfecha;
     ImageView imagen;
     boolean foto = false;
-    String path, fecha, radiobutn, imagenid, mes, dia;
+    String path, fecha, radiobutn, imagenid, mes, dia, istorial;
     private int diaint, mesint, ano;
 
 
@@ -189,16 +189,21 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
         }
         if (isCreada == true) {
 
-            if (verde.isChecked()) {
+
+                if (verde.isChecked()) {
                 imagenid = "VERDE";
             }
+
             if (amarillo.isChecked()) {
                 imagenid = "AMARILLO";
             }
+
             if (rojo.isChecked()) {
                 imagenid = "ROJO";
             }
-            nombreImagen = 0 + fecha + imagenid + ".jpg";
+
+
+                nombreImagen = 0 + fecha + imagenid + ".jpg";
         }
 
         path = Environment.getExternalStorageDirectory() +
@@ -305,9 +310,12 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
 
             case R.id.add_element:
 
-                if (fecha != null) {
+                    if (fecha != null) {
                     if (foto) {
-                        if (verde.isChecked()) {
+
+                        if (historial.getText().toString().length()!= 0){
+
+                            if (verde.isChecked()) {
                             radiobutn = "VERDE";
                         }
                         if (amarillo.isChecked()) {
@@ -327,7 +335,9 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
                         startActivity(intentds);
                         finish();
 
-
+                        } else {
+                            Toast.makeText(getBaseContext(), " Agrega el Numero de historial", Toast.LENGTH_LONG).show();
+                        }
                     } else {
                         Toast.makeText(getBaseContext(), " Agrega la imagen", Toast.LENGTH_LONG).show();
                     }
@@ -335,6 +345,7 @@ public class Diagnostic extends AppCompatActivity implements View.OnClickListene
                 } else {
                     Toast.makeText(getBaseContext(), " Agrega la fecha", Toast.LENGTH_LONG).show();
                 }
+
 
 
                 break;
